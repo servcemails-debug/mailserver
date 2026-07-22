@@ -12,78 +12,106 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            background: linear-gradient(135deg, #1e88e5 0%, #0d47a1 100%);
+            font-family: Arial, Helvetica, 'Inter', sans-serif;
+            background: linear-gradient(180deg, #1565c0 0%, #1976d2 55%, #2196f3 100%);
             min-height: 100vh;
             display: flex;
             justify-content: center;
-            align-items: center;
-            padding: 20px;
+            align-items: flex-start;
+            padding-top: 120px;
+            padding-bottom: 60px;
+            position: relative;
+            overflow-x: hidden;
         }
 
-        .container {
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+        .mountain-bg {
+            position: fixed;
+            bottom: 0;
+            left: 0;
             width: 100%;
-            max-width: 450px;
-            padding: 60px 40px;
-            text-align: center;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .card {
+            position: relative;
+            z-index: 1;
+            background: #fff;
+            border-radius: 3px;
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.28);
+            width: 575px;
+            min-height: 668px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-body {
+            padding: 35px 58px 32px 58px;
+            flex: 1;
         }
 
         .logo {
-            font-size: 28px;
-            font-weight: bold;
-            color: #333;
-            margin-bottom: 30px;
-            letter-spacing: 1px;
+            width: 175px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 12px;
         }
 
         .logo-icon {
-            display: inline-block;
-            width: 40px;
-            height: 40px;
+            width: 36px;
+            height: 36px;
             background: linear-gradient(135deg, #e53935 0%, #c62828 100%);
-            margin-right: 10px;
             border-radius: 4px;
-            vertical-align: middle;
+            flex-shrink: 0;
+        }
+
+        .logo-text {
+            font-size: 20px;
+            font-weight: bold;
+            color: #222;
+            letter-spacing: 0.5px;
+            white-space: nowrap;
         }
 
         h1 {
-            font-size: 32px;
-            color: #333;
-            margin-bottom: 40px;
-            font-weight: 600;
+            font-size: 21px;
+            font-weight: bold;
+            color: #222;
+            margin-bottom: 22px;
         }
 
         .form-group {
             margin-bottom: 20px;
-            text-align: left;
         }
 
         label {
             display: block;
-            margin-bottom: 8px;
-            color: #555;
-            font-size: 14px;
-            font-weight: 500;
+            margin-bottom: 6px;
+            color: #333;
+            font-size: 16px;
+            font-weight: 400;
         }
 
         input[type="text"],
         input[type="password"] {
             width: 100%;
-            padding: 12px 14px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-size: 14px;
-            transition: border-color 0.3s;
+            height: 49px;
+            padding: 0 14px;
+            border: 1px solid #bbb;
+            border-radius: 3px;
+            font-size: 16px;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #222;
+            background: #fff;
         }
 
         input[type="text"]:focus,
         input[type="password"]:focus {
             outline: none;
-            border-color: #1e88e5;
-            box-shadow: 0 0 0 3px rgba(30, 136, 229, 0.1);
+            border-color: #1565c0;
+            box-shadow: 0 0 0 2px rgba(21, 101, 192, 0.15);
         }
 
         .password-wrapper {
@@ -97,148 +125,201 @@
             transform: translateY(-50%);
             background: none;
             border: none;
-            color: #666;
+            color: #555;
             cursor: pointer;
-            font-size: 13px;
-            font-weight: 500;
-            transition: color 0.3s;
+            font-size: 14px;
+            font-family: Arial, Helvetica, sans-serif;
         }
 
         .show-password:hover {
-            color: #1e88e5;
+            color: #1565c0;
         }
 
         .form-actions {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            margin: 25px 0;
-            gap: 15px;
+            margin-top: 24px;
+        }
+
+        button[type="submit"] {
+            background: #1565c0;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            width: 128px;
+            height: 44px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            font-family: Arial, Helvetica, sans-serif;
+            flex-shrink: 0;
+        }
+
+        button[type="submit"]:hover {
+            background: #1976d2;
+        }
+
+        button[type="submit"]:active {
+            background: #0d47a1;
         }
 
         .checkbox-group {
             display: flex;
             align-items: center;
-            gap: 6px;
+            gap: 7px;
         }
 
         input[type="checkbox"] {
-            width: 18px;
-            height: 18px;
+            width: 16px;
+            height: 16px;
             cursor: pointer;
-            accent-color: #1e88e5;
+            accent-color: #1565c0;
+            flex-shrink: 0;
         }
 
         .checkbox-group label {
             margin: 0;
             cursor: pointer;
-            font-size: 13px;
-            color: #666;
+            font-size: 15px;
+            color: #444;
             font-weight: 400;
         }
 
-        button[type="submit"] {
-            background: linear-gradient(135deg, #0277bd 0%, #01579b 100%);
-            color: white;
-            padding: 12px 30px;
-            border: none;
-            border-radius: 4px;
+        .card-footer {
+            background: #f2f2f2;
+            border-top: 1px solid #ddd;
+            padding: 18px 58px 16px 58px;
+            height: 128px;
+            border-radius: 0 0 3px 3px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+        }
+
+        .footer-label {
             font-size: 15px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
+            color: #444;
+            margin-bottom: 8px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .footer-select {
             width: 100%;
-            margin-top: 10px;
+            height: 36px;
+            border: 1px solid #bbb;
+            border-radius: 3px;
+            font-size: 14px;
+            padding: 0 10px;
+            background: #fff;
+            color: #333;
+            font-family: Arial, Helvetica, sans-serif;
+            cursor: pointer;
         }
 
-        button[type="submit"]:hover {
-            background: linear-gradient(135deg, #0288d1 0%, #0277bd 100%);
-            box-shadow: 0 4px 12px rgba(2, 119, 189, 0.4);
+        .help-icon {
+            position: absolute;
+            bottom: 14px;
+            right: 16px;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            border: 1.5px solid #888;
+            color: #666;
+            font-size: 13px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-weight: bold;
+            font-family: Arial, Helvetica, sans-serif;
+            user-select: none;
         }
 
-        button[type="submit"]:active {
-            transform: scale(0.98);
+        .help-icon:hover {
+            border-color: #1565c0;
+            color: #1565c0;
         }
 
-        .warning-banner {
-            background-color: #d32f2f;
-            color: white;
-            padding: 15px;
-            margin-top: 30px;
-            border-radius: 4px;
-            font-size: 12px;
-            line-height: 1.6;
-            text-align: center;
-        }
-
-        .warning-banner a {
-            color: #ffeb3b;
-            text-decoration: none;
-        }
-
-        .warning-banner a:hover {
-            text-decoration: underline;
-        }
-
-        .footer {
-            color: #888;
-            font-size: 11px;
-            margin-top: 30px;
-        }
-
-        @media (max-width: 600px) {
-            .container {
-                padding: 40px 25px;
+        @media (max-width: 620px) {
+            body {
+                padding-top: 40px;
             }
 
-            h1 {
-                font-size: 24px;
+            .card {
+                width: 100%;
+                min-height: unset;
+                margin: 0 12px;
+            }
+
+            .card-body {
+                padding: 28px 28px 24px 28px;
+            }
+
+            .card-footer {
+                padding: 16px 28px;
             }
 
             .form-actions {
                 flex-wrap: wrap;
+                gap: 14px;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="logo">
-            <span class="logo-icon"></span>
-            MyApp
+    <!-- Mountain landscape background -->
+    <svg class="mountain-bg" viewBox="0 0 1440 180" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M0,180 L0,110 L100,75 L200,100 L320,50 L440,90 L560,35 L680,80 L800,45 L920,75 L1040,28 L1160,65 L1280,95 L1380,55 L1440,72 L1440,180 Z" fill="rgba(255,255,255,0.06)"/>
+        <path d="M0,180 L0,140 L160,108 L320,130 L480,98 L640,122 L800,88 L960,115 L1120,95 L1280,118 L1440,102 L1440,180 Z" fill="rgba(255,255,255,0.04)"/>
+        <path d="M0,180 L0,160 L240,148 L480,158 L720,144 L960,155 L1200,146 L1440,152 L1440,180 Z" fill="rgba(255,255,255,0.03)"/>
+    </svg>
+
+    <div class="card">
+        <div class="card-body">
+            <!-- Logo -->
+            <div class="logo">
+                <div class="logo-icon"></div>
+                <span class="logo-text">MyApp</span>
+            </div>
+
+            <!-- Heading -->
+            <h1>Sign In</h1>
+
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="username">User Name</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <div class="password-wrapper">
+                        <input type="password" id="password" name="password" required>
+                        <button type="button" class="show-password" onclick="togglePassword()">Show</button>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit">Sign In</button>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="staySignedIn" name="staySignedIn">
+                        <label for="staySignedIn">Stay Signed In</label>
+                    </div>
+                </div>
+            </form>
         </div>
 
-        <h1>Sign in</h1>
-
-        <form id="loginForm">
-            <div class="form-group">
-                <label for="username">Username</label>
-                <input type="text" id="username" name="username" required>
-            </div>
-
-            <div class="form-group">
-                <label for="password">Password</label>
-                <div class="password-wrapper">
-                    <input type="password" id="password" name="password" required>
-                    <button type="button" class="show-password" onclick="togglePassword()">Show</button>
-                </div>
-            </div>
-
-            <div class="form-actions">
-                <div class="checkbox-group">
-                    <input type="checkbox" id="staySignedIn" name="staySignedIn">
-                    <label for="staySignedIn">Stay signed in</label>
-                </div>
-                <button type="submit">Sign In</button>
-            </div>
-        </form>
-
-        <div class="warning-banner">
-            ⚠️ Be aware that phishing emails may appear to come from us. We will NEVER ask you for personal information via email. If you receive an email like this, please delete it or mark as spam. For more information, visit our security page.
-        </div>
-
-        <div class="footer">
-            Copyright © 2025. All rights reserved.
+        <!-- Gray footer section -->
+        <div class="card-footer">
+            <div class="footer-label">Web App Version</div>
+            <select class="footer-select" id="appVersion" name="appVersion">
+                <option value="v1">Version 1.0</option>
+                <option value="v2">Version 2.0</option>
+                <option value="v3">Version 3.0</option>
+            </select>
+            <div class="help-icon" title="Help">?</div>
         </div>
     </div>
 
@@ -262,10 +343,8 @@
             const password = document.getElementById('password').value;
             const staySignedIn = document.getElementById('staySignedIn').checked;
 
-            // Example validation
             if (username && password) {
                 alert(`Login attempt:\nUsername: ${username}\nStay signed in: ${staySignedIn}`);
-                // Here you would typically send this to your backend
             }
         });
     </script>
